@@ -18,7 +18,7 @@
     "homepage": "",
 
     "scripts": {
-      "start": "nodemon server.js"
+      "start": "nodemon ./server/server.js"
     },
     "engines": {
       "node": "13.12.0",
@@ -41,7 +41,6 @@
       "helmet": "3.22.0",
       "jsonwebtoken": "8.5.1",
       "lodash": "4.17.15",
-      "mongoose": "5.9.7",
-
+      "mongoose": "5.9.7"
     }
   }
