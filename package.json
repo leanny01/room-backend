@@ -1,0 +1,47 @@
+{
+    "name": "Taura-backend",
+    "version": "2.0.0",
+    "description": "Taura backend task",
+    "author": "Dibwe Kalangu",
+    "license": "MIT",
+    "keywords": [
+      "react",
+      "express",
+      "mongodb",
+      "node",
+      "backend"
+    ],
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "homepage": "",
+
+    "scripts": {
+      "start": "nodemon server.js"
+    },
+    "engines": {
+      "node": "13.12.0",
+      "npm": "6.14.4"
+    },
+    "devDependencies": {
+
+      "file-loader": "6.0.0",
+      "nodemon": "2.0.2"
+
+    },
+    "dependencies": {
+
+      "body-parser": "1.19.0",
+      "compression": "1.7.4",
+      "cookie-parser": "1.4.5",
+      "cors": "2.8.5",
+      "express": "4.17.1",
+      "express-jwt": "5.3.1",
+      "helmet": "3.22.0",
+      "jsonwebtoken": "8.5.1",
+      "lodash": "4.17.15",
+      "mongoose": "5.9.7",
+
+    }
+  }
