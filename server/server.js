@@ -1,6 +1,5 @@
 const config = require('../config/config')
-const express= require('express')
-const app = express()
+const app = require('./express')
 const mongoose= require('mongoose')
 
 // Connection URL
@@ -11,6 +10,7 @@ mongoose.connect(config.mongoUri, { useNewUrlParser: true, useCreateIndex: true,
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${config.mongoUri}`)
 })
+
 
 app.listen(config.port, (err) => {
   if (err) {

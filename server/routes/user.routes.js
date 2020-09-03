@@ -1,8 +1,11 @@
 const express  = require('express')
-const userCtrl = require( '../controllers/user.controller')
-const authCtrl = require( '../controllers/auth.controller')
+const userCtrl = require( './../controller/user.controller')
+const authCtrl = require( './../controller/auth.controller')
 
 const router = express.Router()
+
+router.route('/api/')
+  .get(userCtrl.welcome)
 
 router.route('/api/users')
   .get(userCtrl.list)
@@ -15,4 +18,4 @@ router.route('/api/users/:userId')
 
 router.param('userId', userCtrl.userByID)
 
-module.exports(router)
+module.exports = router

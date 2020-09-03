@@ -1,10 +1,10 @@
 const  express = require('express')
-const  authCtrl = require('../controllers/auth.controller')
+const  authCtrl = require('./../controller/auth.controller')
 
 
 const router = express.Router()
 
-router.router('/auth/signin')
+router.route('/auth/signin')
     .post(authCtrl.signin)
 
 router.route('/auth/signout')
