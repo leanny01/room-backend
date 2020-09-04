@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/user.routes')
 const authRoutes = require('./routes/auth.routes')
+const roomRoute = require('./routes/room.route')
 
 
 
@@ -18,6 +19,7 @@ app.use(cookieParser())
 // mount routes
 app.use('/', userRoutes)
 app.use('/', authRoutes)
+app.use('/', roomRoute)
 
 
 // Catch unauthorised errors

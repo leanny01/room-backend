@@ -4,6 +4,7 @@ const RoomSchema = new mongoose.Schema({
     name:{
         type:String,
         trim: true,
+        unique: 'Room name must be unique',
         required: 'Room name is required'
     },
     limit:{
@@ -20,8 +21,14 @@ const RoomSchema = new mongoose.Schema({
     },
     members_list:{
         type:Array,
-        default:[]
-    }
+        default:["string"],
+        minItems:0,
+        maxItems:5,
+        description:"must be an array of string and max is 10"
+    },
+    updated:Date
 });
+
+RoomSchema.index({members_list:'text'})
 
 module.exports = mongoose.model("Room",RoomSchema);
