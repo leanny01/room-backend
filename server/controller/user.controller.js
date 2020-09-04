@@ -1,7 +1,7 @@
 
 const User = require('../models/user.model')
 const extend = require('lodash/extend')
-const errorHandler = require('./../helpers/dbErrorHandler')
+const errorHandler = require('../helpers/dbErrorHandler')
 
 const welcome = async (req, res) => {
   try {
@@ -16,6 +16,7 @@ const welcome = async (req, res) => {
 };
 
 const create = async (req, res) => {
+
   const user = new User(req.body)
   try {
     await user.save()
