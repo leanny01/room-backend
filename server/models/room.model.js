@@ -24,7 +24,7 @@ const RoomSchema = new mongoose.Schema({
         default:["string"],
         minItems:0,
         maxItems:5,
-        description:"must be an array of string and max is 10"
+        description:"must be an array of string and max is 5"
     },
     updated:Date
 });
