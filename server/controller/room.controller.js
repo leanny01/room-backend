@@ -14,7 +14,6 @@ const welcome = async (req, res) => {
 };
 
 const roomByID = async (req, res, next, id) => {
-
   try {
     let room = await Room.findById(id);
 
@@ -30,13 +29,13 @@ const roomByID = async (req, res, next, id) => {
     return res.status("400").json({ error: "Could not retrieve the room" });
   }
 };
-const read = (req,res)=>{
-    res.json(req.room)
-}
+const read = (req, res) => {
+  res.json(req.room);
+};
 
 const create = async (req, res) => {
-  const room = new Room(req.body);
   try {
+    const room = new Room(req.body);
     await room.save();
     return res.status(200).json({
       message: "Successfully created a new room!",
@@ -76,7 +75,6 @@ const list = async (req, res) => {
 
 const changeOwner = async (req, res) => {
   try {
-
     const room = req.room;
     room.updated = Date.now();
     room.owner_id = req.params.userId;
@@ -92,8 +90,6 @@ const changeOwner = async (req, res) => {
 
 const joinRoom = async (req, res) => {
   try {
-
-
     const room = req.room;
     const userToAdd = req.params.userId;
 
@@ -129,7 +125,7 @@ const leaveRoom = async (req, res) => {
 
 const getUserRooms = async (req, res) => {
   try {
-
+    t;
     const rooms = await Room.find({ members_list: req.params.userId });
 
     if (!rooms) {
@@ -139,7 +135,6 @@ const getUserRooms = async (req, res) => {
     }
 
     res.json(rooms);
-
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err),
